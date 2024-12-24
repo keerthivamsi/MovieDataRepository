@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Please find video file named MovieDataAppUIRenderingVideo for complete UI design flow.
+## Added angular grid table with provided API url response
+## Added search functionality for Name field
+## Added redirection functionality to navigate from grid to individual profile view with their respective images and description.
+## Included name in the navigation url to ensure which profile information we are looking into.
+## Added simple styles for look and feel of app.
