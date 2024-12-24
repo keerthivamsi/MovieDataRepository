@@ -13,6 +13,5 @@ import { AgGridInfiniteComponent } from "./components/ag-grid-infinite/ag-grid-i
 export class AppComponent implements OnInit {
   title: string = "Movie Data App";
   ngOnInit(): void {
-    localStorage.setItem("list", JSON.stringify(["newItem", "newItem2"]));
   }
 }

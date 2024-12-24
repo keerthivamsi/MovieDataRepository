@@ -1,5 +1,5 @@
-<div class="profile-container container">
-    <div class="row" style="padding-bottom: 40px;">
+<div class="profile-container" style="background-color: lightcyan;">
+    <div class="row main-card" style="padding-bottom: 40px;">
         <div class="col-md-5">
             <img [src]="imagePath" alt="profileData.name" width="300" height="350">
         </div>
@@ -12,16 +12,17 @@
         </div>
     </div>
 
-    <div class="row" style="padding-bottom: 10px;" *ngFor="let item of profileData.known_for">
-
-
+    <div class="row" style="margin: 26px 14%;
+    border-radius: 14px;
+    background: lightblue;font-size: 17px;
+    line-height: 19px;"  *ngFor="let item of profileData.known_for">
         <div class="col-md-6">
             <img [src]="baseUrl + item.backdrop_path" alt="item.name" width="100%" height="350">
         </div>
         <div class="col-md-6">
             <img [src]="baseUrl + item.poster_path" alt="item.name" width="100%" height="350">
         </div>
-        <p><b>Overview: </b>{{item.overview}}</p>
+        <p class="overview"><b>Overview: </b>{{item.overview}}</p>
         <p><b>mediaType: </b>{{ item.media_type}}</p>
         <p><b>First Air Date: </b>{{ item.first_air_date }}</p>
         <p><b>Vote Average:</b> {{item.vote_average}}</p>

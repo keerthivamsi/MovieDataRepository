@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AgGridAngular } from "ag-grid-angular";
 import {
   CellClickedEvent,
+  CellStyleModule,
   ColDef,
   GridReadyEvent,
   ICellRendererParams,
@@ -22,6 +23,7 @@ ModuleRegistry.registerModules([
   SetFilterModule,
   InfiniteRowModelModule,
   ValidationModule,
+  CellStyleModule
 ]);
 
 @Component({
@@ -70,20 +72,26 @@ export class AgGridInfiniteComponent implements OnInit {
         }
       },
     },
-    { field: "adult", minWidth: 150 },
+    { field: "adult", minWidth: 100 },
     { field: "gender" },
-    { field: "known_for_department", minWidth: 150 },
+    { field: "known_for_department", minWidth: 100 },
     {
       field: "name",
       filter: "agSetColumnFilter",
       filterParams: this.filterParams,
     },
     { field: "original_name", minWidth: 150 },
-    { field: "popularity", minWidth: 150 },
+    { field: "popularity", minWidth: 50 },
     {
-      field: "profile_path", onCellClicked: (event: CellClickedEvent) => {
+      field: "profile_path",  minWidth: 200, onCellClicked: (event: CellClickedEvent) => {
         this.route.navigate(['/profile', event.data.name.replace(' ', '')], { state: { object: event.data } });
-      }
+      },
+      cellRenderer: (params: ICellRendererParams) => {
+        const name = params.value;
+        return `<a href="javascript:void(0);" class="hyperlink">${name}</a>`;
+      },
+      cellClass: 'hyperlink-cell',
+     
     },
 
   ];
@@ -94,11 +102,11 @@ export class AgGridInfiniteComponent implements OnInit {
   };
   public rowBuffer = 0;
   public rowModelType: RowModelType = "infinite";
-  public cacheBlockSize = 2;
-  public cacheOverflowSize = 2;
+  public cacheBlockSize = 4;
+  public cacheOverflowSize = 4;
   public maxConcurrentDatasourceRequests = 1;
   public infiniteInitialRowCount = 5;
-  public maxBlocksInCache = 2;
+  public maxBlocksInCache = 4;
   public rowData!: any[];
   namesList: any = []; 
 
