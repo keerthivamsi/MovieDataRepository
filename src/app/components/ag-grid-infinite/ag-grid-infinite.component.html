@@ -1,15 +1,18 @@
-<ag-grid-angular
-    style="width: 100%; height: 510px;"
-    class="ag-theme-alpine"
-    [columnDefs]="columnDefs"
-    [defaultColDef]="defaultColDef"
-    [rowBuffer]="rowBuffer"
-    [rowModelType]="rowModelType"
-    [cacheBlockSize]="cacheBlockSize"
-    [cacheOverflowSize]="cacheOverflowSize"
-    [maxConcurrentDatasourceRequests]="maxConcurrentDatasourceRequests"
-    [infiniteInitialRowCount]="infiniteInitialRowCount"
-    [maxBlocksInCache]="maxBlocksInCache"
-    [rowData]="rowData"
-    (gridReady)="onGridReady($event)"
-  />
+<div class="ag-grid-custom">
+  <h1>Movie Actors List</h1>
+  <ag-grid-angular
+      style="width: 100%; height: 510px;"
+      class="ag-theme-alpine"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [rowBuffer]="rowBuffer"
+      [rowModelType]="rowModelType"
+      [cacheBlockSize]="cacheBlockSize"
+      [cacheOverflowSize]="cacheOverflowSize"
+      [maxConcurrentDatasourceRequests]="maxConcurrentDatasourceRequests"
+      [infiniteInitialRowCount]="infiniteInitialRowCount"
+      [maxBlocksInCache]="maxBlocksInCache"
+      [rowData]="rowData"
+      (gridReady)="onGridReady($event)"
+    />
+</div>
